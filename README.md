@@ -67,21 +67,21 @@ ember g util bugsnag
 
 ### Custom Diagnostics ([docs](https://docs.bugsnag.com/platforms/browsers/#custom-diagnostics))
 
-To send custom meta data, define a helper method `getMetaData` in the
-`app/utils/bugsnag.js` you created. `getMetaData` takes the error and the
+To send custom metadata, define a helper method `getMetadata` in the
+`app/utils/bugsnag.js` you created. `getMetadata` takes the error and the
 container as arguments, e.g.:
 
 ```js
-export function getMetaData(error, container) {
+export function getMetadata(error, container) {
   return {
-    // …some meta data
+    // …some metadata
   };
 }
 ```
 
 `ember-cli-bugsnag` calls this method for every error and reports any data
-returned by it to Bugsnag as meta data for the respective error. The returned
-metaData should be formatted to correspond with tabs in your interface. E.g.
+returned by it to Bugsnag as metadata for the respective error. The returned
+metadata should be formatted to correspond with tabs in your interface. E.g.
 for an Account tab:
 
 ```js
